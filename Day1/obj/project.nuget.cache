@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZdLweUdnYXCBIkVI/Xnj/BZfD3pZgN5e66AD9FfgsDTvkXiFBIAXpwylUdFofiuqblqfvpWz9WvXXWk8Z2uTyQ==",
+  "dgSpecHash": "CjbCM+U7+seuI27P2CFxKv9/P9bd2d6FCz/bWCRmfKTH2h0q2R/nlwcLm+EJswAeaYLyCIXfiPIYiSEU9tTaBQ==",
   "success": true,
-  "projectFilePath": "/home/arkan/RiderProjects/Advent of Code/y2023/Day1/Day1.csproj",
+  "projectFilePath": "/home/arkan/RiderProjects/Advent of Code/AdventOfCode2023/Day1/Day1.csproj",
   "expectedPackageFiles": [
     "/home/arkan/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.0/microsoft.aspnetcore.app.ref.8.0.0.nupkg.sha512"
   ],

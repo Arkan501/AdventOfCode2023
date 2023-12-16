@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/arkan/RiderProjects/Advent of Code/y2023/Day1/Day1.csproj": {}
+    "/home/arkan/RiderProjects/Advent of Code/AdventOfCode2023/Day1/Day1.csproj": {}
   },
   "projects": {
-    "/home/arkan/RiderProjects/Advent of Code/y2023/Day1/Day1.csproj": {
+    "/home/arkan/RiderProjects/Advent of Code/AdventOfCode2023/Day1/Day1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/arkan/RiderProjects/Advent of Code/y2023/Day1/Day1.csproj",
+        "projectUniqueName": "/home/arkan/RiderProjects/Advent of Code/AdventOfCode2023/Day1/Day1.csproj",
         "projectName": "Day1",
-        "projectPath": "/home/arkan/RiderProjects/Advent of Code/y2023/Day1/Day1.csproj",
+        "projectPath": "/home/arkan/RiderProjects/Advent of Code/AdventOfCode2023/Day1/Day1.csproj",
         "packagesPath": "/home/arkan/.nuget/packages/",
-        "outputPath": "/home/arkan/RiderProjects/Advent of Code/y2023/Day1/obj/",
+        "outputPath": "/home/arkan/RiderProjects/Advent of Code/AdventOfCode2023/Day1/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/arkan/.nuget/NuGet/NuGet.Config"

@@ -4,17 +4,11 @@ namespace Day1;
 
 public class CalDoc
 { 
-    const string outputPath = @"/home/arkan/RiderProjects/Advent of Code/y2023/Day1/output.txt";
+    const string outputPath = @"null";
     static StreamWriter output = new(outputPath);
     // initializing a variable that will store our solution
-    static int solution = 0;
+    static int solution  = 0;
 
-    // method to convert word numbers to int numbers
-    private void ReturnNumber(string word)
-    {
-        
-    }
-    
     // method to convert string of numbers into two digit answer the problem has asked for
     private void ReturnSolution(string digits)
     {
@@ -36,7 +30,7 @@ public class CalDoc
     public static void Main(string[] args)
     {
         // initializing file paths
-        const string inputPath = @"/home/arkan/RiderProjects/Advent of Code/y2023/Day1/input.txt";
+        const string inputPath = @"null";
         // pass file path to StreamReader
         StreamReader input = new StreamReader(inputPath);
         
