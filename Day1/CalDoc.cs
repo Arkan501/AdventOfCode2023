@@ -7,9 +7,16 @@ public class CalDoc
 { 
     
     static StreamWriter output = new(OutputPath);
-    // initializing a variable that will store our solution
+    // initializing a variable that will store our solution value
     static int solution  = 0;
-
+    
+    private static Dictionary<string, int> numTable = 
+        new Dictionary<string, int> 
+        {
+            {"one", 1}, {"two", 2}, {"three", 3},
+            {"four", 4}, {"five", 5}, {"six", 6},
+            {"seven", 7}, {"eight", 8}, {"nine", 9}
+        };
     // method to convert string of numbers into two digit answer the problem has asked for
     private void ReturnSolution(string digits)
     {
@@ -41,6 +48,8 @@ public class CalDoc
         // this loop will go through every line of the input file to the end
         while (line != null)
         {
+            // replace word numbers with literal
+            line = Regex.Replace(line, numTable,);
             // remove letters from the line being read
             line = Regex.Replace(line, "[A-Za-z]", "");
             // this method SHOULD return the two digit version of each line
