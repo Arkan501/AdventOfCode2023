@@ -1,11 +1,12 @@
 ﻿using System.Text.RegularExpressions;
+using static Day1.FilePath;
 
 namespace Day1;
 
 public class CalDoc
 { 
-    const string outputPath = @"null";
-    static StreamWriter output = new(outputPath);
+    
+    static StreamWriter output = new(OutputPath);
     // initializing a variable that will store our solution
     static int solution  = 0;
 
@@ -30,9 +31,9 @@ public class CalDoc
     public static void Main(string[] args)
     {
         // initializing file paths
-        const string inputPath = @"null";
+        
         // pass file path to StreamReader
-        StreamReader input = new StreamReader(inputPath);
+        StreamReader input = new StreamReader(InputPath);
         
         // reading the first line of the input file
         var line = input.ReadLine();
