@@ -5,12 +5,12 @@ namespace Day1;
 
 public class CalDoc
 { 
-    
-    static StreamWriter output = new(OutputPath);
+    private static readonly StreamReader Input = new(InputPath);
+    private static readonly StreamWriter Output = new(OutputPath);
     // initializing a variable that will store our solution value
-    static int solution  = 0;
+    private static int _solution  = 0;
     
-    private static Dictionary<string, int> numTable = 
+    private static Dictionary<string, int> NumDict = 
         new Dictionary<string, int> 
         {
             {"one", 1}, {"two", 2}, {"three", 3},
@@ -27,12 +27,12 @@ public class CalDoc
         // adding both of the pulled digits into a char array
         char[] newDigit = { first, last };
         // converting the char array into a string
-        string s = new string(newDigit);
+        var s = new string(newDigit);
         
         // converting the new string to a number, and adding it to our solution
-        solution += Convert.ToInt32(s);
+        _solution += Convert.ToInt32(s);
         // writing the new digit to our output file, because why not
-        output.WriteLine(newDigit);
+        Output.WriteLine(newDigit);
     }
     
     public static void Main(string[] args)
@@ -40,27 +40,29 @@ public class CalDoc
         // initializing file paths
         
         // pass file path to StreamReader
-        StreamReader input = new StreamReader(InputPath);
         
         // reading the first line of the input file
-        var line = input.ReadLine();
+        var line = Input.ReadLine();
         
         // this loop will go through every line of the input file to the end
         while (line != null)
         {
             // replace word numbers with literal
-            line = Regex.Replace(line, numTable,);
+            foreach (var key in NumDict.Keys)
+            {
+                line = line.Replace(key, NumDict[key].ToString());
+            }
             // remove letters from the line being read
-            line = Regex.Replace(line, "[A-Za-z]", "");
+            line = Regex.Replace(line, "[^0-9]", "");
             // this method SHOULD return the two digit version of each line
             new CalDoc().ReturnSolution(line);
             // read the next line
-            line = input.ReadLine();
+            line = Input.ReadLine();
         }
         
         // we need to close both files in order for them to update
-        input.Close();
-        output.Close();
-        Console.WriteLine(solution);
+        Input.Close();
+        Output.Close();
+        Console.WriteLine(_solution);
     }
 }
