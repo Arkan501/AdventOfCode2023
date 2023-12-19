@@ -8,14 +8,14 @@ public class CalDoc
     private static readonly StreamReader Input = new(InputPath);
     private static readonly StreamWriter Output = new(OutputPath);
     // initializing a variable that will store our solution value
-    private static int _solution  = 0;
+    private static int _solution;
     
-    private static Dictionary<string, int> NumDict = 
-        new Dictionary<string, int> 
+    private static readonly Dictionary<string, string> NumDict = 
+        new Dictionary<string, string> 
         {
-            {"one", 1}, {"two", 2}, {"three", 3},
-            {"four", 4}, {"five", 5}, {"six", 6},
-            {"seven", 7}, {"eight", 8}, {"nine", 9}
+            {"one", "on1e"}, {"two", "tw2o"}, {"three", "thr3ee"},
+            {"four", "fo4ur"}, {"five", "fi5ve"}, {"six", "si6x"},
+            {"seven", "sev7en"}, {"eight", "eig8ht"}, {"nine", "ni9ne"}
         };
     // method to convert string of numbers into two digit answer the problem has asked for
     private void ReturnSolution(string digits)
@@ -50,7 +50,7 @@ public class CalDoc
             // replace word numbers with literal
             foreach (var key in NumDict.Keys)
             {
-                line = line.Replace(key, NumDict[key].ToString());
+                line = line.Replace(key, NumDict[key]);
             }
             // remove letters from the line being read
             line = Regex.Replace(line, "[^0-9]", "");
