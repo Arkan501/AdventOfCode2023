@@ -5,11 +5,18 @@ namespace Day1;
 
 public class CalDoc
 { 
+    private static readonly StreamReader Input = new(InputPath);
+    private static readonly StreamWriter Output = new(OutputPath);
+    // initializing a variable that will store our solution value
+    private static int _solution;
     
-    static StreamWriter output = new(OutputPath);
-    // initializing a variable that will store our solution
-    static int solution  = 0;
-
+    private static readonly Dictionary<string, string> NumDict = 
+        new Dictionary<string, string> 
+        {
+            {"one", "on1e"}, {"two", "tw2o"}, {"three", "thr3ee"},
+            {"four", "fo4ur"}, {"five", "fi5ve"}, {"six", "si6x"},
+            {"seven", "sev7en"}, {"eight", "eig8ht"}, {"nine", "ni9ne"}
+        };
     // method to convert string of numbers into two digit answer the problem has asked for
     private void ReturnSolution(string digits)
     {
@@ -20,12 +27,12 @@ public class CalDoc
         // adding both of the pulled digits into a char array
         char[] newDigit = { first, last };
         // converting the char array into a string
-        string s = new string(newDigit);
+        var s = new string(newDigit);
         
         // converting the new string to a number, and adding it to our solution
-        solution += Convert.ToInt32(s);
+        _solution += Convert.ToInt32(s);
         // writing the new digit to our output file, because why not
-        output.WriteLine(newDigit);
+        Output.WriteLine(newDigit);
     }
     
     public static void Main(string[] args)
@@ -33,25 +40,29 @@ public class CalDoc
         // initializing file paths
         
         // pass file path to StreamReader
-        StreamReader input = new StreamReader(InputPath);
         
         // reading the first line of the input file
-        var line = input.ReadLine();
+        var line = Input.ReadLine();
         
         // this loop will go through every line of the input file to the end
         while (line != null)
         {
+            // replace word numbers with literal
+            foreach (var key in NumDict.Keys)
+            {
+                line = line.Replace(key, NumDict[key]);
+            }
             // remove letters from the line being read
-            line = Regex.Replace(line, "[A-Za-z]", "");
+            line = Regex.Replace(line, "[^0-9]", "");
             // this method SHOULD return the two digit version of each line
             new CalDoc().ReturnSolution(line);
             // read the next line
-            line = input.ReadLine();
+            line = Input.ReadLine();
         }
         
         // we need to close both files in order for them to update
-        input.Close();
-        output.Close();
-        Console.WriteLine(solution);
+        Input.Close();
+        Output.Close();
+        Console.WriteLine(_solution);
     }
 }
